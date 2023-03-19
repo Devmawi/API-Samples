@@ -1,0 +1,35 @@
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:DataServices>
+    <Schema Namespace="ODataWebApi.Models" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityType Name="Order">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Amount" Type="Edm.Decimal" Nullable="false" Scale="Variable" />
+      </EntityType>
+      <EntityType Name="Article">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ItemNumber" Type="Edm.String" Nullable="false" />
+        <Property Name="Rating" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Orders" Type="Collection(ODataWebApi.Models.Order)" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <Action Name="rate" IsBound="true">
+        <Parameter Name="bindingParameter" Type="ODataWebApi.Models.Article" />
+        <ReturnType Type="Edm.Int32" Nullable="false" />
+      </Action>
+      <Function Name="ExecuteSomeFunction">
+        <ReturnType Type="Edm.String" />
+      </Function>
+      <EntityContainer Name="Container">
+        <EntitySet Name="Articles" EntityType="ODataWebApi.Models.Article" />
+        <FunctionImport Name="ExecuteSomeFunction" Function="Default.ExecuteSomeFunction" IncludeInServiceDocument="true" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
