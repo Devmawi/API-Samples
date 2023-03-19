@@ -7,7 +7,8 @@ Inspired by Microsoft docs:
 * https://learn.microsoft.com/en-us/odata/client/getting-started
 * https://www.jacobmohl.dk/how-to-add-odata-parameters-to-your-aspnet-core-api
 * https://learn.microsoft.com/en-us/odata/webapi-8/fundamentals/actions-functions
-
+* https://learn.microsoft.com/en-us/odata/webapi-8/fundamentals/action-routing?tabs=net60%2Cvisual-studio
+* https://learn.microsoft.com/en-us/odata/webapi-8/fundamentals/metadata-routing?tabs=net60%2Cvisual-studio
 
 Example OData Queries:
 

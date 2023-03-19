@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 19.03.2023 16:03:42
+// Generation date: 19.03.2023 16:33:52
 namespace ODataWebApi.Models
 {
     /// <summary>
