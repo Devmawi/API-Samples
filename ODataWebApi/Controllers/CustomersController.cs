@@ -41,5 +41,11 @@ namespace ODataWebApi.Controllers
         {
             return $"Hello {p["name"]}";
         }
+
+        [HttpPost]
+        public string SomeAction2(ODataActionParameters p)
+        {
+            return $"Hello {(p["order"] as Order).Amount}";
+        }
     }
 }

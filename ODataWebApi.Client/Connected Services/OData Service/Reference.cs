@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 19.03.2023 16:33:52
+// Generation date: 19.03.2023 22:10:46
 namespace ODataWebApi.Models
 {
     /// <summary>
@@ -317,6 +317,149 @@ namespace ODataWebApi.Models
         }
     }
     /// <summary>
+    /// There are no comments for CustomerSingle in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("CustomerSingle")]
+    public partial class CustomerSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<Customer>
+    {
+        /// <summary>
+        /// Initialize a new CustomerSingle object.
+        /// </summary>
+        public CustomerSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+            : base(context, path) {}
+
+        /// <summary>
+        /// Initialize a new CustomerSingle object.
+        /// </summary>
+        public CustomerSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+            : base(context, path, isComposable) {}
+
+        /// <summary>
+        /// Initialize a new CustomerSingle object.
+        /// </summary>
+        public CustomerSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<Customer> query)
+            : base(query) {}
+
+    }
+    /// <summary>
+    /// There are no comments for Customer in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::Microsoft.OData.Client.Key("Id")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("Customer")]
+    public partial class Customer : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Customer object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        /// <param name="credit">Initial value of Credit.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        public static Customer CreateCustomer(int ID, string name, float credit)
+        {
+            Customer customer = new Customer();
+            customer.Id = ID;
+            customer.Name = name;
+            customer.Credit = credit;
+            return customer;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Id")]
+        [global::System.ComponentModel.DataAnnotations.RequiredAttribute(ErrorMessage = "Id is required.")]
+        public virtual int Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private int _Id;
+        partial void OnIdChanging(int value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
+        [global::System.ComponentModel.DataAnnotations.RequiredAttribute(ErrorMessage = "Name is required.")]
+        public virtual string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Credit in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Credit")]
+        [global::System.ComponentModel.DataAnnotations.RequiredAttribute(ErrorMessage = "Credit is required.")]
+        public virtual float Credit
+        {
+            get
+            {
+                return this._Credit;
+            }
+            set
+            {
+                this.OnCreditChanging(value);
+                this._Credit = value;
+                this.OnCreditChanged();
+                this.OnPropertyChanged("Credit");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private float _Credit;
+        partial void OnCreditChanging(float value);
+        partial void OnCreditChanged();
+        /// <summary>
+        /// This event is raised when the value of the property is changed
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// The value of the property is changed
+        /// </summary>
+        /// <param name="property">property name</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
     /// Class containing all extension methods
     /// </summary>
     public static class ExtensionMethods
@@ -366,6 +509,29 @@ namespace ODataWebApi.Models
                 { "Id", id }
             };
             return new global::ODataWebApi.Models.ArticleSingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::ODataWebApi.Models.Customer as global::ODataWebApi.Models.CustomerSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="_source">source entity set</param>
+        /// <param name="_keys">dictionary with the names and values of keys</param>
+        public static global::ODataWebApi.Models.CustomerSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::ODataWebApi.Models.Customer> _source, global::System.Collections.Generic.IDictionary<string, object> _keys)
+        {
+            return new global::ODataWebApi.Models.CustomerSingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::ODataWebApi.Models.Customer as global::ODataWebApi.Models.CustomerSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="_source">source entity set</param>
+        /// <param name="id">The value of id</param>
+        public static global::ODataWebApi.Models.CustomerSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::ODataWebApi.Models.Customer> _source,
+            int id)
+        {
+            global::System.Collections.Generic.IDictionary<string, object> _keys = new global::System.Collections.Generic.Dictionary<string, object>
+            {
+                { "Id", id }
+            };
+            return new global::ODataWebApi.Models.CustomerSingle(_source.Context, _source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(_source.Context, _keys)));
         }
     }
 }
@@ -466,12 +632,38 @@ namespace Default
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::ODataWebApi.Models.Article> _Articles;
         /// <summary>
+        /// There are no comments for Customers in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Customers")]
+        public virtual global::Microsoft.OData.Client.DataServiceQuery<global::ODataWebApi.Models.Customer> Customers
+        {
+            get
+            {
+                if ((this._Customers == null))
+                {
+                    this._Customers = base.CreateQuery<global::ODataWebApi.Models.Customer>("Customers");
+                }
+                return this._Customers;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::ODataWebApi.Models.Customer> _Customers;
+        /// <summary>
         /// There are no comments for Articles in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
         public virtual void AddToArticles(global::ODataWebApi.Models.Article article)
         {
             base.AddObject("Articles", article);
+        }
+        /// <summary>
+        /// There are no comments for Customers in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
+        public virtual void AddToCustomers(global::ODataWebApi.Models.Customer customer)
+        {
+            base.AddObject("Customers", customer);
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "#VersionNumber#")]
         private abstract class GeneratedEdmModel
@@ -544,12 +736,54 @@ namespace Default
         {
             return this.CreateFunctionQuerySingle<string>("", "ExecuteSomeFunction", false);
         }
+        /// <summary>
+        /// There are no comments for ExecuteSomeFunction2 in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ExecuteSomeFunction2")]
+        public virtual global::Microsoft.OData.Client.DataServiceQuerySingle<string> ExecuteSomeFunction2()
+        {
+            return this.CreateFunctionQuerySingle<string>("", "ExecuteSomeFunction2", false);
+        }
+        /// <summary>
+        /// There are no comments for ExecuteSomeAction2 in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ExecuteSomeAction2")]
+        public virtual global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> ExecuteSomeAction2()
+        {
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(this, this.BaseUri.OriginalString.Trim('/') + "/ExecuteSomeAction2");
+        }
     }
     /// <summary>
     /// Class containing all extension methods
     /// </summary>
     public static class ExtensionMethods
     {
+        /// <summary>
+        /// There are no comments for SayHello in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SayHello")]
+        public static global::Microsoft.OData.Client.DataServiceQuerySingle<string> SayHello(this global::Microsoft.OData.Client.DataServiceQuery<global::ODataWebApi.Models.Customer> _source, string message)
+        {
+            if (!_source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return _source.CreateFunctionQuerySingle<string>("Default.SayHello", false, new global::Microsoft.OData.Client.UriOperationParameter("message", message));
+        }
+        /// <summary>
+        /// There are no comments for SayHello2 in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SayHello2")]
+        public static global::Microsoft.OData.Client.DataServiceQuerySingle<string> SayHello2(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::ODataWebApi.Models.Customer> _source, string message)
+        {
+            if (!_source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return _source.CreateFunctionQuerySingle<string>("Default.SayHello2", false, new global::Microsoft.OData.Client.UriOperationParameter("message", message));
+        }
         /// <summary>
         /// There are no comments for Rate in the schema.
         /// </summary>
@@ -562,6 +796,32 @@ namespace Default
             }
 
             return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<int>(_source.Context, _source.AppendRequestUri("Default.rate"));
+        }
+        /// <summary>
+        /// There are no comments for SomeAction in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SomeAction")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> SomeAction(this global::Microsoft.OData.Client.DataServiceQuery<global::ODataWebApi.Models.Customer> _source, string name)
+        {
+            if (!_source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(_source.Context, _source.AppendRequestUri("Default.SomeAction"), new global::Microsoft.OData.Client.BodyOperationParameter("name", name));
+        }
+        /// <summary>
+        /// There are no comments for SomeAction2 in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SomeAction2")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> SomeAction2(this global::Microsoft.OData.Client.DataServiceQuery<global::ODataWebApi.Models.Customer> _source, global::ODataWebApi.Models.Order order)
+        {
+            if (!_source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(_source.Context, _source.AppendRequestUri("Default.SomeAction2"), new global::Microsoft.OData.Client.BodyOperationParameter("order", order));
         }
     }
 }

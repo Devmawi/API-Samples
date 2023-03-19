@@ -26,6 +26,9 @@ sayHello2.Returns<string>();
 var action = modelBuilder.EntityType<Customer>().Collection.Action("SomeAction"); action.Returns<string>();
 action.Parameter<string>("name");
 
+var action2 = modelBuilder.EntityType<Customer>().Collection.Action("SomeAction2");
+action2.EntityParameter<Order>("order");
+action2.Returns<string>();
 
 modelBuilder.Function("ExecuteSomeFunction2").Returns<string>();
 modelBuilder.Action("ExecuteSomeAction2").Returns<string>();
