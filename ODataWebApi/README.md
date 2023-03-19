@@ -14,3 +14,5 @@ Example OData Queries:
 
 * http://localhost:5252/odata/Articles?$filter=ItemNumber%20eq%20%27Article%201%27
 * http://localhost:5252/odata/Articles?$expand=Orders
+* http://localhost:5252/odata/Customers/Default.SayHello(message='Otto')
+* http://localhost:5252/odata/Customers(1)/Default.SayHello2(message='otto')

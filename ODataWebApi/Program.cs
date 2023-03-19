@@ -8,11 +8,27 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var modelBuilder = new ODataConventionModelBuilder();
+//modelBuilder.Namespace = "Default";
+//modelBuilder.ContainerName = "DefaultContainer";
+
 modelBuilder.EntityType<Order>();
 modelBuilder.EntitySet<Article>("Articles");
 modelBuilder.EntityType<Article>()      
         .Action("rate").Returns<int>();
 modelBuilder.Function("ExecuteSomeFunction").Returns<string>();
+var function = modelBuilder.EntitySet<Customer>("Customers").EntityType.Collection.Function("SayHello"); function.Returns<string>();
+  function.Parameter<string>("message");
+
+var sayHello2 = modelBuilder.EntityType<Customer>().Function("SayHello2");
+sayHello2.Parameter<string>("message");
+sayHello2.Returns<string>();
+
+var action = modelBuilder.EntityType<Customer>().Collection.Action("SomeAction"); action.Returns<string>();
+action.Parameter<string>("name");
+
+
+modelBuilder.Function("ExecuteSomeFunction2").Returns<string>();
+modelBuilder.Action("ExecuteSomeAction2").Returns<string>();
 
 builder.Services.AddControllers().AddOData(
     options => {
@@ -41,8 +57,14 @@ var app = builder.Build();
 //    app.UseSwaggerUI();
 //}
 
-app.UseAuthorization();
 
+app.UseRouting();
+app.UseAuthorization();
+app.UseODataRouteDebug();
 app.MapControllers();
+
+
+
+
 
 app.Run();

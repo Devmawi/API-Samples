@@ -3,7 +3,7 @@
     "http": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "odata/$metadata",
+      "launchUrl": "$odata",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
