@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcService.Server", "GrpcS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcService.Client", "GrpcService.Client\GrpcService.Client.csproj", "{761E3B4A-F132-47A2-9CE3-B8C6C26EDA72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQLService", "GraphQLService\GraphQLService.csproj", "{255D39CA-A973-4F17-ABC5-136D29217865}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQLClient", "GraphQLClient\GraphQLClient.csproj", "{850BB720-DF36-4B97-B72A-C71AC6AF27DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,14 @@ Global
 		{761E3B4A-F132-47A2-9CE3-B8C6C26EDA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{761E3B4A-F132-47A2-9CE3-B8C6C26EDA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{761E3B4A-F132-47A2-9CE3-B8C6C26EDA72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{255D39CA-A973-4F17-ABC5-136D29217865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{255D39CA-A973-4F17-ABC5-136D29217865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{255D39CA-A973-4F17-ABC5-136D29217865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{255D39CA-A973-4F17-ABC5-136D29217865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{850BB720-DF36-4B97-B72A-C71AC6AF27DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{850BB720-DF36-4B97-B72A-C71AC6AF27DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{850BB720-DF36-4B97-B72A-C71AC6AF27DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{850BB720-DF36-4B97-B72A-C71AC6AF27DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
