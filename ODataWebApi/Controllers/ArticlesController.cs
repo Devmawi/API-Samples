@@ -10,7 +10,7 @@ namespace ODataWebApi.Controllers
 {
     //[ApiController]
     //[Route("[controller]")]
-    [ODataAttributeRouting]
+    //[ODataAttributeRouting]
     public class ArticlesController : ODataController
     {
         private static Random random = new Random();
@@ -36,7 +36,8 @@ namespace ODataWebApi.Controllers
         }
 
         [EnableQuery]
-        public ActionResult Get()
+        [HttpGet]
+        public ActionResult Get([FromODataUri] string someParam)
         {
             return Ok(articles);
         }
@@ -45,6 +46,13 @@ namespace ODataWebApi.Controllers
         public ActionResult Get([FromRoute] int key)
         {
             return Ok(articles.Find(a => a.Id == key));
+        }
+
+        [EnableQuery]
+        [HttpGet]
+        public IQueryable<Article> More(string someParam)
+        {
+            return articles.AsQueryable();
         }
 
         [HttpPost("/odata/Articles({key})/Default.Rate")] // !!! With namespace

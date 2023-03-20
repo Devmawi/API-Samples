@@ -15,6 +15,12 @@ modelBuilder.EntityType<Order>();
 modelBuilder.EntitySet<Article>("Articles");
 modelBuilder.EntityType<Article>()      
         .Action("rate").Returns<int>();
+
+var f = modelBuilder.EntityType<Article>().Collection.Function("More")
+    ;
+f.Parameter<string>("someParam");
+f.ReturnsFromEntitySet<Article>("Articles");
+
 modelBuilder.Function("ExecuteSomeFunction").Returns<string>();
 var function = modelBuilder.EntitySet<Customer>("Customers").EntityType.Collection.Function("SayHello"); function.Returns<string>();
   function.Parameter<string>("message");
